@@ -1,0 +1,14 @@
+{
+  "name": "langchain-first-call",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "first-call": "bun run scripts/first-call.ts",
+    "first-stream": "bun run scripts/first-stream.ts",
+    "first-agent": "bun run scripts/first-agent.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "type": "module"
+}
