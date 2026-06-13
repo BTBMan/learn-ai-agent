@@ -2,10 +2,10 @@ import { ChatOpenAI } from '@langchain/openai';
 import { createAgent } from 'langchain';
 
 const model = new ChatOpenAI({
-  apiKey: process.env.DEEPSEEK_API_KEY,
-  model: process.env.DEEPSEEK_MODEL || 'deepseek-v4-flash',
+  apiKey: process.env.API_KEY,
+  model: process.env.MODEL,
   configuration: {
-    baseURL: process.env.DEEPSEEK_BASE_URL,
+    baseURL: process.env.BASE_URL,
   },
   modelKwargs: {
     thinking: {
@@ -25,7 +25,7 @@ const stream = await agent.stream(
     messages: [
       {
         role: 'user',
-        content: '请用两句话确认 LangChain 与 DeepSeek 的连接已经正常。',
+        content: '请用两句话确认 LangChain 与 LLM 的连接已经正常。',
       },
     ],
   },
