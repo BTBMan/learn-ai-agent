@@ -46,8 +46,6 @@ const stream = await agent.stream(
   },
 );
 
-console.log(stream);
-
 process.stdout.write('invoke result:\n');
 
 for await (const [messageChunk] of stream) {
