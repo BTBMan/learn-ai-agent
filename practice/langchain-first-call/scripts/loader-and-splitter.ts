@@ -3,7 +3,7 @@ import { Document } from '@langchain/core/documents';
 import { PDFParse } from 'pdf-parse';
 import { RecursiveCharacterTextSplitter } from '@langchain/textsplitters';
 
-async function loadPdfPages(filePath: string): Promise<Document[]> {
+export async function loadPdfPages(filePath: string): Promise<Document[]> {
   const parser = new PDFParse({
     data: new Uint8Array(readFileSync(filePath)),
   });
@@ -33,4 +33,11 @@ const splitter = new RecursiveCharacterTextSplitter({
 
 const chunks = await splitter.splitDocuments(rawDocs);
 
-console.log(chunks[0], chunks[1]);
+export const docChunks = chunks.map((chunk, index) => {
+  return {
+    ...chunk,
+    id: `resume-chunk-${index}`,
+  };
+});
+
+// console.log(chunks[0], chunks[1]);

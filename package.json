@@ -9,6 +9,7 @@
   "type": "module",
   "packageManager": "pnpm@11.5.0",
   "dependencies": {
+    "@langchain/classic": "^1.0.38",
     "@langchain/core": "^1.1.48",
     "@langchain/langgraph": "^1.4.7",
     "@langchain/openai": "^1.4.7",
