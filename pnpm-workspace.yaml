@@ -1,4 +1,4 @@
 packages:
   - practice/*
-
-catalogs:
+allowBuilds:
+  protobufjs: set this to true or false
