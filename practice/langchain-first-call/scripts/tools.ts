@@ -1,0 +1,56 @@
+import { tool } from 'langchain';
+import z from 'zod';
+
+export const getWeather = tool(
+  async ({ city }) => {
+    const fakeWeatherMap: Record<string, string> = {
+      上海: '明天小雨，17-22 度',
+      北京: '明天晴，12-25 度',
+      深圳: '明天多云，26-30 度',
+    };
+
+    return fakeWeatherMap[city] ?? `${city}：暂无天气数据`;
+  },
+  {
+    name: 'get_weather',
+    description: '查询某个城市未来的天气情况',
+    schema: z.object({
+      city: z.string().describe('要查询天气的城市名'),
+    }),
+  },
+);
+
+export const createReminder = tool(
+  async ({ content, time }) => {
+    return {
+      ok: true,
+      message: `提醒已创建：${time} - ${content}`,
+    };
+  },
+  {
+    name: 'create_reminder',
+    description: '帮用户创建一个提醒事项',
+    schema: z.object({
+      content: z.string().describe('提醒的具体内容'),
+      time: z.string().describe('提醒时间，例如 明天早上 8 点'),
+    }),
+  },
+);
+
+export const querySchedule = tool(
+  async ({ date }) => {
+    const schedules: Record<string, string> = {
+      明天: '10:00 产品评审会，14:00 和小李 1v1',
+      后天: '全天无日程',
+    };
+
+    return schedules[date] ?? `${date}：没有找到日程`;
+  },
+  {
+    name: 'query_schedule',
+    description: '查询用户某一天的日程安排',
+    schema: z.object({
+      date: z.string().describe('要查询的日期，例如 今天、明天、后天'),
+    }),
+  },
+);
