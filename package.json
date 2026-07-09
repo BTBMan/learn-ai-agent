@@ -15,6 +15,7 @@
     "@langchain/openai": "^1.4.7",
     "@langchain/textsplitters": "^1.0.1",
     "langchain": "^1.4.4",
+    "langsmith": "^0.7.17",
     "pdf-parse": "^2.4.5",
     "zod": "^4.4.3"
   },
