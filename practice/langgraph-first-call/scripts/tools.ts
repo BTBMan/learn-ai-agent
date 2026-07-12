@@ -83,3 +83,32 @@ export const getCurrentTime = tool(
     schema: z.object({}),
   },
 );
+
+export const checkCalendar = tool(
+  async ({ date, period }) => {
+    return `${date} 的 ${period} 目前空闲，可以安排会议。`;
+  },
+  {
+    name: 'check_calendar',
+    description: '查看某一天某个时间段是否空闲',
+    schema: z.object({
+      date: z.string(),
+      period: z.string(),
+    }),
+  },
+);
+
+export const draftEmail = tool(
+  async ({ to, subject, body }) => {
+    return `邮件草稿已生成：收件人 ${to}，主题《${subject}》，正文：${body}`;
+  },
+  {
+    name: 'draft_email',
+    description: '生成邮件草稿',
+    schema: z.object({
+      to: z.string(),
+      subject: z.string(),
+      body: z.string(),
+    }),
+  },
+);
