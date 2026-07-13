@@ -1,4 +1,9 @@
 packages:
   - practice/*
 allowBuilds:
-  protobufjs: set this to true or false
+  esbuild: false
+  protobufjs: false
+  sharp: false
+  workerd: false
+minimumReleaseAgeExclude:
+  - hono@4.12.30
