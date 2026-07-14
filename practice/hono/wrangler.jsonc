@@ -15,6 +15,13 @@
       "id": "477c78c649bd421e83279c6ca3980159",
     },
   ],
+  "d1_databases": [
+    {
+      "binding": "MY_DB",
+      "database_name": "my-db",
+      "database_id": "cd65ff09-e80b-44ac-96bc-3552c3c5725e",
+    },
+  ],
   // "kv_namespaces": [
   //   {
   //     "binding": "MY_KV_NAMESPACE",

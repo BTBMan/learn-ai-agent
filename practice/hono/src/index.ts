@@ -3,6 +3,7 @@ import error from './error';
 import jwt from './jwt';
 import users from './users';
 import kv from './kv';
+import d1 from './d1';
 import { errorHandler } from './error-handler';
 
 const app = new Hono();
@@ -17,5 +18,6 @@ app.route('/', jwt);
 app.route('/', users);
 app.route('/', error);
 app.route('/', kv);
+app.route('/', d1);
 
 export default app;

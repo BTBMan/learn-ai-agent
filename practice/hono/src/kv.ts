@@ -23,8 +23,6 @@ app.post('/kv/:key', async (c) => {
   const key = c.req.param('key');
   const body = await c.req.json();
 
-  console.log(body);
-
   await c.env.MY_KV.put(`${KEY_PREFIX}:${key}`, JSON.stringify(body));
 
   return c.json({ message: 'Value stored successfully' });

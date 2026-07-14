@@ -1,0 +1,7 @@
+-- Migration number: 0001 	 2026-07-14T07:36:30.677Z
+CREATE TABLE IF NOT EXISTS users (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT NOT NULL,
+  email TEXT NOT NULL UNIQUE,
+  created_at TEXT DEFAULT (datetime('now'))
+);
