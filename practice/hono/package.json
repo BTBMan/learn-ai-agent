@@ -3,6 +3,13 @@
   "type": "module",
   "scripts": {
     "wr": "wrangler",
+    "dz": "drizzle-kit",
+    "dz:gen": "pnpm dz generate",
+    "d1": "pnpm wr d1",
+    "d1:create": "pnpm d1 create",
+    "mig": "pnpm wr d1 migrations",
+    "mig:create": "pnpm mig create",
+    "mig:apply": "pnpm mig apply",
     "login": "pnpm wr login",
     "dev": "pnpm wr dev",
     "deploy": "pnpm wr deploy --minify",
@@ -10,9 +17,11 @@
   },
   "dependencies": {
     "@hono/zod-validator": "^0.8.0",
+    "drizzle-orm": "^0.45.2",
     "hono": "^4.12.30"
   },
   "devDependencies": {
+    "drizzle-kit": "^0.31.10",
     "wrangler": "^4.110.0"
   }
 }

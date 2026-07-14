@@ -21,6 +21,12 @@
       "database_name": "my-db",
       "database_id": "cd65ff09-e80b-44ac-96bc-3552c3c5725e",
     },
+    {
+      "binding": "MY_DRIZZLE_DB",
+      "database_name": "my-drizzle-db",
+      "database_id": "5666e21d-b5b0-4f2f-b234-c8bf9a018af8",
+      "migrations_dir": "./drizzle/migrations",
+    },
   ],
   // "kv_namespaces": [
   //   {
