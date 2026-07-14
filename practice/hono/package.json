@@ -2,10 +2,11 @@
   "name": "hono",
   "type": "module",
   "scripts": {
-    "login": "wrangler login",
-    "dev": "wrangler dev",
-    "deploy": "wrangler deploy --minify",
-    "cf-typegen": "wrangler types --env-interface CloudflareBindings"
+    "wr": "wrangler",
+    "login": "pnpm wr login",
+    "dev": "pnpm wr dev",
+    "deploy": "pnpm wr deploy --minify",
+    "cf-typegen": "pnpm wr types --env-interface CloudflareBindings"
   },
   "dependencies": {
     "@hono/zod-validator": "^0.8.0",

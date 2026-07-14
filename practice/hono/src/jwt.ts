@@ -1,22 +1,6 @@
 import { Hono, MiddlewareHandler } from 'hono';
-import { jwt, JwtVariables, sign } from 'hono/jwt';
-
-interface Bindings {
-  JWT_SECRET: string;
-}
-
-interface AppEnv {
-  Bindings: Bindings;
-}
-
-interface AuthEnv extends AppEnv {
-  Variables: JwtVariables<{
-    userId: number;
-    email: string;
-    role: string;
-    exp: number;
-  }>;
-}
+import { jwt, sign } from 'hono/jwt';
+import { AuthEnv } from './types';
 
 const app = new Hono<AuthEnv>();
 

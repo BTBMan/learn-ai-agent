@@ -9,6 +9,12 @@
   "vars": {
     "JWT_SECRET": "dev-secret",
   },
+  "kv_namespaces": [
+    {
+      "binding": "MY_KV",
+      "id": "477c78c649bd421e83279c6ca3980159",
+    },
+  ],
   // "kv_namespaces": [
   //   {
   //     "binding": "MY_KV_NAMESPACE",
