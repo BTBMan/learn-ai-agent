@@ -28,6 +28,12 @@
       "migrations_dir": "./drizzle/migrations",
     },
   ],
+  "r2_buckets": [
+    {
+      "bucket_name": "my-bucket",
+      "binding": "MY_BUCKET",
+    },
+  ],
   // "kv_namespaces": [
   //   {
   //     "binding": "MY_KV_NAMESPACE",
