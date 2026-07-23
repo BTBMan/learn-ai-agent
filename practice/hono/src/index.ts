@@ -6,6 +6,7 @@ import kv from './kv';
 import d1 from './d1';
 import drizzle from './drizzle';
 import r2 from './r2';
+import rpc from './rpc';
 import { errorHandler } from './error-handler';
 
 const app = new Hono();
@@ -23,5 +24,9 @@ app.route('/', kv);
 app.route('/', d1);
 app.route('/', drizzle);
 app.route('/', r2);
+
+const rpcRouter = app.route('/', rpc);
+
+export type RPCType = typeof rpcRouter;
 
 export default app;
