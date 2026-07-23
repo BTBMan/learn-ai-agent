@@ -8,6 +8,7 @@ import drizzle from './drizzle';
 import r2 from './r2';
 import rpc from './rpc';
 import stream from './stream';
+import ai from './ai';
 import { errorHandler } from './error-handler';
 
 const app = new Hono();
@@ -26,6 +27,7 @@ app.route('/', d1);
 app.route('/', drizzle);
 app.route('/', r2);
 app.route('/', stream);
+app.route('/', ai);
 
 const rpcRouter = app.route('/', rpc);
 
