@@ -13,6 +13,7 @@ import embedding from './embedding';
 import durableObject from './durable-object';
 import room from './room';
 import queue from './queue';
+import cache from './cache';
 import { errorHandler } from './error-handler';
 import { AppEnv } from './types';
 
@@ -40,6 +41,7 @@ app.route('/', embedding);
 app.route('/', durableObject);
 app.route('/', room);
 app.route('/', queue);
+app.route('/', cache);
 
 const rpcRouter = app.route('/', rpc);
 
