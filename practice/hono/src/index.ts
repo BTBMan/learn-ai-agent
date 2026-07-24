@@ -13,6 +13,7 @@ import embedding from './embedding';
 import durableObject from './durable-object';
 import room from './room';
 import { errorHandler } from './error-handler';
+import { AppEnv } from './types';
 
 export { Counter } from './durable-object';
 export { Room } from './room';
@@ -42,4 +43,17 @@ const rpcRouter = app.route('/', rpc);
 
 export type RPCType = typeof rpcRouter;
 
-export default app;
+export default {
+  fetch: app.fetch,
+  async scheduled(
+    controller: ScheduledController,
+    env: AppEnv['Bindings'],
+    ctx: ExecutionContext,
+  ) {
+    console.log({
+      controller,
+      env,
+      ctx,
+    });
+  },
+};

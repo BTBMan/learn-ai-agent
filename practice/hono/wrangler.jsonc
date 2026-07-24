@@ -64,7 +64,10 @@
       "tag": "v1",
       "new_sqlite_classes": ["Counter", "Room"]
     }
-  ]
+  ],
+  "triggers": {
+    "crons": ["*/5 * * * *"]
+  }
   // "kv_namespaces": [
   //   {
   //     "binding": "MY_KV_NAMESPACE",
