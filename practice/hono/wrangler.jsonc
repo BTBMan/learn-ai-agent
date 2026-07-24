@@ -40,6 +40,13 @@
     "binding": "AI",
     "remote": true,
   },
+  "vectorize": [
+    {
+      "binding": "DOCS_INDEX",
+      "index_name": "docs-index",
+      "remote": true,
+    },
+  ],
   // "kv_namespaces": [
   //   {
   //     "binding": "MY_KV_NAMESPACE",

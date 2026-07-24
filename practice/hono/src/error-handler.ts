@@ -8,6 +8,8 @@ export class ValidationError extends HTTPException {
 }
 
 export const errorHandler: ErrorHandler = (err, c) => {
+  console.log(err);
+
   if (err instanceof ValidationError) {
     return c.json(
       {
