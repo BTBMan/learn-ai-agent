@@ -12,6 +12,7 @@ import ai from './ai';
 import embedding from './embedding';
 import durableObject from './durable-object';
 import room from './room';
+import queue from './queue';
 import { errorHandler } from './error-handler';
 import { AppEnv } from './types';
 
@@ -38,6 +39,7 @@ app.route('/', ai);
 app.route('/', embedding);
 app.route('/', durableObject);
 app.route('/', room);
+app.route('/', queue);
 
 const rpcRouter = app.route('/', rpc);
 
@@ -45,15 +47,18 @@ export type RPCType = typeof rpcRouter;
 
 export default {
   fetch: app.fetch,
-  async scheduled(
-    controller: ScheduledController,
-    env: AppEnv['Bindings'],
-    ctx: ExecutionContext,
-  ) {
+  async scheduled(controller, env, ctx) {
     console.log({
       controller,
       env,
       ctx,
     });
   },
-};
+  async queue(batch, env, ctx) {
+    if (batch.queue === 'rag-ingest') {
+      for (const msg of batch.messages) {
+        msg.ack();
+      }
+    }
+  },
+} satisfies ExportedHandler<AppEnv['Bindings']>;

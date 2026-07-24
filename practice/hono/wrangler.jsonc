@@ -67,6 +67,23 @@
   ],
   "triggers": {
     "crons": ["*/5 * * * *"]
+  },
+  "queues": {
+    "producers": [
+      {
+        "queue": "rag-ingest",
+        "binding": "RAG_INGEST"
+      }
+    ],
+    "consumers": [
+      {
+        "queue": "rag-ingest",
+        "max_batch_size": 10,
+        "max_batch_timeout": 5,
+        "max_retries": 3,
+        "dead_letter_queue": "rag-ingest-dlq"
+      }
+    ]
   }
   // "kv_namespaces": [
   //   {
