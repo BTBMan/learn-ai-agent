@@ -10,7 +10,12 @@ import rpc from './rpc';
 import stream from './stream';
 import ai from './ai';
 import embedding from './embedding';
+import durableObject from './durable-object';
+import room from './room';
 import { errorHandler } from './error-handler';
+
+export { Counter } from './durable-object';
+export { Room } from './room';
 
 const app = new Hono();
 
@@ -30,6 +35,8 @@ app.route('/', r2);
 app.route('/', stream);
 app.route('/', ai);
 app.route('/', embedding);
+app.route('/', durableObject);
+app.route('/', room);
 
 const rpcRouter = app.route('/', rpc);
 

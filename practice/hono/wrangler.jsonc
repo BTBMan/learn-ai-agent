@@ -9,44 +9,62 @@
   "vars": {
     "JWT_SECRET": "dev-secret",
     "AI_BASE_URL": "https://open.bigmodel.cn/api/paas/v4",
-    "AI_MODEL": "glm-4.5-air",
+    "AI_MODEL": "glm-4.5-air"
   },
   "kv_namespaces": [
     {
       "binding": "MY_KV",
-      "id": "477c78c649bd421e83279c6ca3980159",
-    },
+      "id": "477c78c649bd421e83279c6ca3980159"
+    }
   ],
   "d1_databases": [
     {
       "binding": "MY_DB",
       "database_name": "my-db",
-      "database_id": "cd65ff09-e80b-44ac-96bc-3552c3c5725e",
+      "database_id": "cd65ff09-e80b-44ac-96bc-3552c3c5725e"
     },
     {
       "binding": "MY_DRIZZLE_DB",
       "database_name": "my-drizzle-db",
       "database_id": "5666e21d-b5b0-4f2f-b234-c8bf9a018af8",
-      "migrations_dir": "./drizzle/migrations",
-    },
+      "migrations_dir": "./drizzle/migrations"
+    }
   ],
   "r2_buckets": [
     {
       "bucket_name": "my-bucket",
-      "binding": "MY_BUCKET",
-    },
+      "binding": "MY_BUCKET"
+    }
   ],
   "ai": {
     "binding": "AI",
-    "remote": true,
+    "remote": true
   },
   "vectorize": [
     {
       "binding": "DOCS_INDEX",
       "index_name": "docs-index",
-      "remote": true,
-    },
+      "remote": true
+    }
   ],
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "COUNTER",
+        "class_name": "Counter"
+      },
+      {
+        "name": "ROOM",
+        "class_name": "Room"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": ["Counter", "Room"]
+    }
+  ]
   // "kv_namespaces": [
   //   {
   //     "binding": "MY_KV_NAMESPACE",
