@@ -14,6 +14,7 @@ import durableObject from './durable-object';
 import room from './room';
 import queue from './queue';
 import cache from './cache';
+import log from './log';
 import { errorHandler } from './error-handler';
 import { AppEnv } from './types';
 
@@ -42,6 +43,7 @@ app.route('/', durableObject);
 app.route('/', room);
 app.route('/', queue);
 app.route('/', cache);
+app.route('/', log);
 
 const rpcRouter = app.route('/', rpc);
 

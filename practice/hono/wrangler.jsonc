@@ -84,7 +84,19 @@
         "dead_letter_queue": "rag-ingest-dlq"
       }
     ]
-  }
+  },
+  "observability": {
+    "logs": {
+      "enabled": true,
+      "head_sampling_rate": 1
+    }
+  },
+  "analytics_engine_datasets": [
+    {
+      "binding": "ANALYTICS",
+      "dataset": "hono_test"
+    }
+  ]
   // "kv_namespaces": [
   //   {
   //     "binding": "MY_KV_NAMESPACE",
